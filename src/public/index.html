@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Workout - Log</title>
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Workout Log</h1>
+    </header>
+    <main>
+      <form class="insert-menu" id="workout-log">
+        <h3> Insert an item</h3>
+        <div class="form-content">
+          <input class="time" name="time" type="number" min="0" placeholder="Time spent" />
+          <select name="sport" data-form-sport>
+            <option>Run</option>
+            <option>Swim</option>
+            <option>Bike</option>
+          </select>
+          <input type="date" name="date" class="date-picker">
+          <button id="submit-button" >Add</button>
+        </div>
+      </form>
+      <table class="log-table" id="logTable">
+        <thead>
+          <tr>
+            <th onclick="sortTable(0)">TEMPO</th>
+            <th onclick="sortTable(1)">TIPO</th>
+            <th onclick="sortTable(2)">DATA</th>
+            <th class="button-head"></th>
+          </tr>
+        </thead>
+        <tbody id="workout-table-body" />
+      </table>
+      <h2><span class="time-spent" id="timeValue">0</span> hours of exercises</h2>
+    </main>
+  </div>
+  <script type="module" src="../scripts/main.js"></script>
+  <script src="../scripts/sortTable.js"></script>
+</body>
+</html>
